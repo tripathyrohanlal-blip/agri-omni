@@ -1,0 +1,11 @@
+{
+    "plan_requests": [
+        {
+            "username": "1234",
+            "plan": "monthly",
+            "phone": "1234567890",
+            "date": "2026-06-20T12:59:44.239490"
+        }
+    ],
+    "loan_requests": []
+}

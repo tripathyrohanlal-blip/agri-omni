@@ -1,0 +1,15 @@
+{
+    "1234": {
+        "password": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
+        "phone": "1234567890",
+        "village": "w",
+        "plan": "free",
+        "tenure": 0,
+        "created": "2026-06-20T12:58:59.143612",
+        "loan_approved": false,
+        "loan_amount": 0,
+        "points": 0,
+        "crops_analyzed": 0,
+        "soil_checks": 0
+    }
+}
