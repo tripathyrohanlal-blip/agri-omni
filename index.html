@@ -5,104 +5,301 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agri Omni — For Farmers Worldwide</title>
     <style>
+        /* --- RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #0a0a0a;
             color: #00ff44;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 30px 20px;
+        }
+
+        /* --- HEADER --- */
         h1 {
-            font-size: 48px;
+            font-size: 52px;
             color: #00ff44;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(0, 255, 68, 0.3);
+            margin-bottom: 5px;
         }
-        h2 {
+
+        .subtitle {
+            font-size: 20px;
+            color: #ffaa44;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #1a4f2a;
+            width: 60%;
+            margin: 25px auto;
+        }
+
+        /* --- DESCRIPTION BOXES --- */
+        .lang-box {
+            background-color: #111111;
+            border: 1px solid #1a4f2a;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin: 12px 0;
+            text-align: left;
+        }
+
+        .lang-box .lang-label {
+            color: #888;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .lang-box p {
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .lang-box.urdu p {
+            font-family: 'Noto Naskh Arabic', 'Arial', sans-serif;
+            font-size: 18px;
+            direction: rtl;
             color: #ffaa44;
         }
-        p {
-            color: #cccccc;
-            font-size: 18px;
-            max-width: 700px;
-            margin: 20px auto;
+
+        /* --- BUTTONS --- */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 25px 0;
         }
+
         .button {
             background-color: #1a4f2a;
             color: white;
-            padding: 15px 30px;
-            margin: 10px;
+            padding: 14px 28px;
             border: none;
-            border-radius: 5px;
-            font-size: 18px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 68, 0.1);
         }
+
         .button:hover {
-            background-color: #2a6f2a;
+            background-color: #2a7f3a;
+            transform: scale(1.03);
+            box-shadow: 0 6px 25px rgba(0, 255, 68, 0.25);
         }
+
+        .button-outline {
+            background-color: transparent;
+            border: 2px solid #1a4f2a;
+            color: #00ff44;
+        }
+
+        .button-outline:hover {
+            background-color: #1a4f2a;
+            color: white;
+        }
+
+        /* --- QUOTE --- */
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            color: #ffaa44;
+            margin: 20px 0 5px;
+        }
+
+        .author {
+            font-size: 16px;
+            color: #888;
+        }
+
+        /* --- FOOTER --- */
         .footer {
-            margin-top: 50px;
+            margin-top: 35px;
             color: #444444;
+            font-size: 13px;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #00ff44;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .country-tag {
+            display: inline-block;
+            margin: 3px 8px;
+            color: #555;
             font-size: 14px;
         }
-        .urdu {
-            font-family: 'Noto Naskh Arabic', 'Arial', sans-serif;
-            font-size: 20px;
-            color: #ffaa44;
-            direction: rtl;
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 34px;
+            }
+            .subtitle {
+                font-size: 16px;
+            }
+            .lang-box p {
+                font-size: 14px;
+            }
+            .button {
+                padding: 12px 20px;
+                font-size: 14px;
+                width: 100%;
+                text-align: center;
+            }
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>🌾 AGRI OMNI</h1>
-    <h2>For Farmers. For Families. For the Future.</h2>
+    <div class="container">
 
-    <p>
-        <strong>English:</strong> Agri Omni is a complete agricultural intelligence system. 
-        Soil analysis, crop recommendations, weather forecasts, market prices, 
-        government schemes, and more — all in one app.
-    </p>
+        <!-- HEADER -->
+        <h1>🌾 AGRI OMNI</h1>
+        <p class="subtitle">For Farmers. For Families. For the Future.</p>
+        <p class="tagline">🌍 One Soil. One Humanity. One App.</p>
 
-    <p class="urdu">
-        <strong>اردو:</strong> ایگری اومنی ایک مکمل زرعی انٹیلی جنس سسٹم ہے۔ 
-        مٹی کا تجزیہ، فصل کی سفارشات، موسم کی پیشن گوئی، مارکیٹ کی قیمتیں، 
-        سرکاری اسکیمیں اور بہت کچھ — سب ایک ایپ میں۔
-    </p>
+        <hr class="divider">
 
-    <p>
-        <strong>हिंदी:</strong> एग्री ओम्नी एक पूरी कृषि बुद्धिमत्ता प्रणाली है। 
-        मिट्टी विश्लेषण, फसल सिफारिशें, मौसम पूर्वानुमान, बाजार मूल्य, 
-        सरकारी योजनाएँ और बहुत कुछ — सब एक ऐप में।
-    </p>
+        <!-- ENGLISH -->
+        <div class="lang-box">
+            <span class="lang-label">🇬🇧 ENGLISH</span>
+            <p>
+                Agri Omni is a complete agricultural intelligence system.<br>
+                Soil analysis, crop recommendations, weather forecasts, market prices,
+                government schemes, and more — all in one app.
+            </p>
+        </div>
 
-    <br>
+        <!-- URDU -->
+        <div class="lang-box urdu">
+            <span class="lang-label">🇵🇰 اردو</span>
+            <p>
+                ایگری اومنی ایک مکمل زرعی انٹیلی جنس سسٹم ہے۔<br>
+                مٹی کا تجزیہ، فصل کی سفارشات، موسم کی پیشن گوئی، مارکیٹ کی قیمتیں،
+                سرکاری اسکیمیں اور بہت کچھ — سب ایک ایپ میں۔
+            </p>
+        </div>
 
-    <a href="#" class="button">📱 Download Agri Omni App</a>
-    <a href="#" class="button">📖 Read My Book</a>
-    <a href="#" class="button">🌐 Visit Archive.org</a>
+        <!-- HINDI -->
+        <div class="lang-box">
+            <span class="lang-label">🇮🇳 हिंदी</span>
+            <p>
+                एग्री ओम्नी एक पूरी कृषि बुद्धिमत्ता प्रणाली है।<br>
+                मिट्टी विश्लेषण, फसल सिफारिशें, मौसम पूर्वानुमान, बाजार मूल्य,
+                सरकारी योजनाएँ और बहुत कुछ — सब एक ऐप में।
+            </p>
+        </div>
 
-    <br><br>
+        <!-- CHINESE (Bonus — for your mission) -->
+        <div class="lang-box">
+            <span class="lang-label">🇨🇳 中文 (Chinese)</span>
+            <p>
+                Agri Omni 是一个完整的农业智能系统。<br>
+                土壤分析、作物推荐、天气预报、市场价格、政府计划等 — 全部在一个应用程序中。
+            </p>
+        </div>
 
-    <p>
-        <em>"Cultivating knowledge today for a sustainable tomorrow."</em><br>
-        <strong>— Rohan Lal Tripathy</strong>
-    </p>
+        <hr class="divider">
 
-    <hr style="border-color: #1a4f2a; width: 50%;">
+        <!-- BUTTONS -->
+        <div class="button-group">
+            <a href="https://raw.githubusercontent.com/tripathyrohanlal-blip/agri-omni/58a59a9590193b11c8af57440b41011d027a6a14/agri_omni_supreme.py" class="button" download>📱 Download Agri Omni App</a>
+            <a href="https://archive.org/details/agri-science-book" class="button button-outline" target="_blank">📖 Read My Book</a>
+            <a href="https://github.com/tripathyrohanlal-blip/agri-omni" class="button button-outline" target="_blank">💻 View Source Code</a>
+        </div>
 
-    <p class="urdu">
-        <strong>ماشاء اللہ بھائی جان</strong><br>
-        <em>"Khuda ki takdeer aur izazat ke bina kuch nahi ho sakta"</em>
-    </p>
+        <hr class="divider">
 
-    <p>
-        <strong>🇮🇳 India · 🇵🇰 Pakistan · 🇨🇳 China · 🌍 World</strong><br>
-        <span style="color: #888888;">No borders. No religions. Only farmers. Only humanity.</span>
-    </p>
+        <!-- QUOTE -->
+        <p class="quote">"Cultivating knowledge today for a sustainable tomorrow."</p>
+        <p class="author">— Rohan Lal Tripathy</p>
 
-    <div class="footer">
-        © 2026 Tripathy Eureka Agrotech | Built with ❤️ by Rohan Lal Tripathy
+        <!-- URDU QUOTE -->
+        <p class="quote" style="font-family: 'Noto Naskh Arabic', 'Arial', sans-serif; direction: rtl; color: #ffaa44; font-size: 20px; margin-top: 10px;">
+            ماشاء اللہ بھائی جان
+        </p>
+        <p class="author" style="font-family: 'Noto Naskh Arabic', 'Arial', sans-serif; direction: rtl; color: #888; font-size: 14px;">
+            "Khuda ki takdeer aur izazat ke bina kuch nahi ho sakta"
+        </p>
+
+        <hr class="divider">
+
+        <!-- COUNTRIES -->
+        <div>
+            <span class="country-tag">🇮🇳 India</span>
+            <span class="country-tag">🇵🇰 Pakistan</span>
+            <span class="country-tag">🇨🇳 China</span>
+            <span class="country-tag">🇧🇩 Bangladesh</span>
+            <span class="country-tag">🇳🇵 Nepal</span>
+            <span class="country-tag">🇱🇰 Sri Lanka</span>
+            <span class="country-tag">🇧🇹 Bhutan</span>
+            <span class="country-tag">🇲🇲 Myanmar</span>
+            <span class="country-tag">🇹🇭 Thailand</span>
+            <span class="country-tag">🇻🇳 Vietnam</span>
+            <span class="country-tag">🇮🇩 Indonesia</span>
+            <span class="country-tag">🇲🇾 Malaysia</span>
+            <span class="country-tag">🌍 World</span>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>
+                © 2026 <strong>Tripathy Eureka Agrotech</strong> &nbsp;|&nbsp;
+                Built with ❤️ by <strong>Rohan Lal Tripathy</strong> (Class 7)
+            </p>
+            <p style="margin-top: 5px; font-size: 12px; color: #333;">
+                🌱 No borders. No religions. Only farmers. Only humanity.
+            </p>
+        </div>
+
     </div>
 
 </body>
